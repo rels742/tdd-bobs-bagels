@@ -84,7 +84,98 @@ describe("Basket", () => {
         expect(updatedBasket).toEqual(expected) ///excpected as in the expected result, I could have names const expected to be expectedResult
     })
 
+    it("add basket limit of 5", () => {
+        // Setup
+        const basket = new Basket()
+        const itemsToAdd = [
+            {   
+                id: "plain-bagel",
+                sku: "BGLP",
+                name: "Bagel",
+                price: "0.39",
+                variant: "Plain"
+            },
+            {
+                id: "everything-bagel",
+                sku: "BGLE",
+                price: "0.49",
+                name: "Bagel",
+                variant: "Everything"
+            },
+            {
+                id: "Sesame-bagel",
+                sku: "BGLS",
+                price: "0.49",
+                name: "Bagel",
+                variant: "Sesame"
+            },
+            {
+                id: "Tuna-bagel",
+                sku: "COF",
+                price: "0.99",
+                name: "Bagel",
+                variant: "Tuna"
+            },
+            {
+                id: "Nutella-bagel",
+                sku: "BNUT",
+                price: '1.00',
+                name: "bagel",
+                variant: "Nutella"
+            },
+            {
+                id: "Ham Cheese - toastie",
+                sku: "TOA",
+                price: "0.90",
+                name: "toastie",
+                variant: "ham-cheese"
+            }
+
+        ]
+
+        const expectedResult = [
+            {   
+                id: "plain-bagel",
+                sku: "BGLP",
+                name: "Bagel",
+                price: "0.39",
+                variant: "Plain"
+            },
+            {
+                id: "everything-bagel",
+                sku: "BGLE",
+                price: "0.49",
+                name: "Bagel",
+                variant: "Everything"
+            },
+            {
+                id: "Sesame-bagel",
+                sku: "BGLS",
+                price: "0.49",
+                name: "Bagel",
+                variant: "Sesame"
+            },
+            {
+                id: "Tuna-bagel",
+                sku: "COF",
+                price: "0.99",
+                name: "Bagel",
+                variant: "Tuna"
+            },
+            {
+                id: "Nutella-bagel",
+                sku: "BNUT",
+                price: '1.00',
+                name: "bagel",
+                variant: "Nutella"
+            }
+        ]
+
+        //execute 
+        const result = basket.addMultipleItemsToBasket(itemsToAdd)
+
+        //verify 
+        expect(result).toEqual(expectedResult)
+    })
+
 })
-
-
-// return expected.pop

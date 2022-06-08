@@ -10,7 +10,7 @@ VERBS/ACTIONS -
 
 JS Object BagelItem 
 -PROPERTIES 
--sku
+
 -name
 -etc 
 

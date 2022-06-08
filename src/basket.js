@@ -47,41 +47,9 @@ class Basket {
        }
        this.items = newBasket
        //console.log('new basket', this.items) console.log placed here to see what the updated basket would be and nothing can go after return this.items
-       return this.items
-       
+
+       return this.items 
    } 
 }
-
-class Checkout {
-    constructor() {
-        this.basket = []
-        this.max = 5 
-    }
-
-  isMax() {
-      if(this.basket.length >= this.max) {
-          return true 
-      }
-      return false
-  }
-
-  addToBasket(item) {
-      if (!this.isMax()) {
-        if (item) {
-          console.log('Added Item ', item, this.basket.length)
-          this.basket.push(item)
-        }
-      }
-      return this.basket
-    }
-  
-    addMultipleToBasket(items) {
-      for (let i = 0; i < items.length; i++) {
-        this.addToBasket(items[i])
-      }
-      return this.basket
-    }
-}
-
 module.exports = Basket
 
